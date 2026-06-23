@@ -1,39 +1,57 @@
-# CS-210 Portfolio – Grocer Project
+# CS-210 Portfolio – Corner Grocer Item Frequency Analyzer
 
 ## Project Summary
-This project simulates a grocery store inventory and checkout system. It reads item data from a text file, allows users to add items to a virtual cart, calculates totals with tax, and generates a receipt. The program demonstrates file I/O, data structures, user input validation, and modular code design.
+This C++ program analyzes grocery purchase data from a text file (`CS210_Project_Three_Input_File.txt`). It counts the frequency of each item purchased and provides an interactive menu allowing the user to:
+- Search for a specific item’s frequency
+- Print all items with their frequencies
+- Display a visual histogram of frequencies
+- Exit the program
+
+It solves the real-world problem of quickly understanding purchasing trends and generating reports for a corner grocery store.
 
 ## What I Did Particularly Well
-- Clean, consistent code style and meaningful variable/function names
-- Strong input validation and error handling (especially file opening)
-- Well-organized modular structure with separate functions for different tasks
-- Clear, professional comments throughout the code
+- Designed a clean, object-oriented solution using a `GroceryTracker` class.
+- Implemented robust file handling with multiple fallback paths and clear error messages.
+- Used `std::map` for efficient item tracking and automatic sorting.
+- Added professional menu system with input validation and exception handling.
+- Wrote clear, well-commented code with consistent formatting.
 
 ## Areas for Enhancement
-- Could implement a more efficient data structure (e.g., `std::unordered_map` instead of `std::vector` for lookups)
-- Add unit tests for critical functions
-- Improve receipt formatting and make it more professional
-- Add configuration file support for tax rates and store information
+- Could add case-insensitive searching (currently case-sensitive).
+- Could implement data validation to handle malformed input lines.
+- Could add the ability to update frequencies during runtime or save new purchases.
+- Could create a simple GUI instead of console-only.
 
-These improvements would make the code faster, more maintainable, and easier to extend.
+These improvements would make the program more user-friendly, robust against bad data, and easier to extend in the future.
 
-## Most Challenging Parts
-The most difficult part was properly handling file I/O errors and ensuring the program gracefully exits or gives useful feedback when files are missing or corrupted. I overcame this by carefully researching C++ exception handling and using defensive programming techniques (checking if files opened successfully before proceeding).
+## Most Challenging Parts & How I Overcame Them
+The most challenging part was reliably loading the input file regardless of where the program is run from (different IDEs and folder structures).  
+I overcame this by creating a vector of possible file paths and trying each one, plus using proper exception handling with `try/catch`.
+
+**Tools & resources added to my support network:**
+- cppreference.com
+- LearnCpp.com
+- Visual Studio Debugger
+- Stack Overflow (for specific C++ file I/O questions)
 
 ## Transferable Skills
-- Reading and processing data from external files
-- Breaking large problems into smaller, reusable functions
-- Input validation and error handling
-- Writing clean, documented, maintainable code
+- File I/O and data processing
+- Using STL containers (`std::map`, `std::vector`)
+- Building interactive menu-driven programs
+- Exception handling and defensive programming
+- Writing modular, maintainable C++ code
 
-These skills are directly applicable to almost any future C++ or software development project.
+These skills will be very useful in future courses (especially data structures, algorithms, and software engineering projects).
 
-## How I Made the Program Maintainable, Readable, and Adaptable
-- Used consistent naming conventions
-- Added detailed comments explaining the purpose of each function and major code blocks
-- Kept functions short and single-purpose
-- Used constants for magic numbers
-- Separated concerns (data loading, menu handling, calculations, output)
+## How I Made This Program Maintainable, Readable, and Adaptable
+- Used meaningful class and function names (`loadDataFromFile`, `printHistogram`, etc.).
+- Broke functionality into small, single-responsibility methods.
+- Added detailed comments at the top of the file and throughout complex sections.
+- Separated concerns (data loading, menu logic, output formatting).
+- The class design makes it easy to add new features (e.g., new report types) without rewriting core logic.
 
-## Final Thoughts
-This project was a great capstone for the course. It forced me to combine everything I learned about C++ into one cohesive program. I’m proud of how it turned out and feel much more confident in my programming abilities.
+---
+
+**Repository Link:** https://github.com/My-Studioe/CS-210-Portfolio
+
+SNHU CS-210 Programming Languages – Rolfe H. Green
